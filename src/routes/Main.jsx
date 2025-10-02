@@ -3,13 +3,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./Main.scss";
 import HelloCard from "../components/HelloCard";
 import InstructionCard from "../components/InstructionCard";
+import Auth from "../components/Auth";
 
 const MainPage = () => {
   const navigate = useNavigate();
   const params = useParams();
 
   const texts = useMemo(
-    () => ["hello world", "привет мир", "здравствуй, реальность"],
+    () => ["VS Code'a", "Тех, кто читает документацию", "Массивы"],
     []
   );
 
@@ -28,7 +29,7 @@ const MainPage = () => {
       <div className="main">
         <div className="main__container">
           <HelloCard text={textHello} onNext={handleNext} />
-          <InstructionCard />
+          <Auth />
         </div>
       </div>
     </>
