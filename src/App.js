@@ -1,6 +1,8 @@
+// src/App.jsx
 import React, { useEffect } from "react";
 import AppRouter from "./router";
 import { checkForNewVersion } from "./versionCheck";
+import { CartProvider } from "./context/CartContext"; // ← импортируем провайдер
 
 export default function App() {
   useEffect(() => {
@@ -11,6 +13,8 @@ export default function App() {
   }, []);
 
   return (
-    <AppRouter />
+    <CartProvider>
+      <AppRouter />
+    </CartProvider>
   );
 }
